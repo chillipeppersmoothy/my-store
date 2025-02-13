@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "source": "/my-store/**",
+            "destination": "/index.html"
         }
     ]
 }

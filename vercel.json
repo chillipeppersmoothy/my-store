@@ -1,31 +1,7 @@
 {
     "routes": [
         {
-            "src": "/my-store/",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/products",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/products/category/:category?",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/about",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/cart",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/checkout",
-            "dest": "/"
-        },
-        {
-            "src": "/my-store/login",
+            "src": "/[^.]+",
             "dest": "/"
         }
     ]

@@ -11,7 +11,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (!login?.isLoggedIn)
-      navigate("/my-store/login", { state: { path: "/my-store/checkout" } });
+      navigate("/login", { state: { path: "/checkout" } });
   });
 
   return (

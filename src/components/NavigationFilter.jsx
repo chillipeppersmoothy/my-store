@@ -20,11 +20,11 @@ const NavigatioFilter = ({
       onClick={() => {
         setDisplayProducts(name);
         if (name === "All" || categoryName === "") {
-          navigate(`/my-store/products/`, {
+          navigate(`/products/`, {
             replace: true,
           });
         } else {
-          navigate(`/my-store/products/category/${categoryName}`, {
+          navigate(`/products/category/${categoryName}`, {
             replace: true,
           });
         }

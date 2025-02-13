@@ -37,9 +37,7 @@ describe("CategoryCard", () => {
     fireEvent.click(button);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith(
-      "/my-store/products/category/mens"
-    );
+    expect(mockUseNavigate).toHaveBeenCalledWith("/products/category/mens");
   });
 
   it("should navigate to womens category on click on the button", () => {
@@ -51,9 +49,7 @@ describe("CategoryCard", () => {
     fireEvent.click(button);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith(
-      "/my-store/products/category/womens"
-    );
+    expect(mockUseNavigate).toHaveBeenCalledWith("/products/category/womens");
   });
 
   it("should navigate to mens category on click on the button", () => {
@@ -65,7 +61,7 @@ describe("CategoryCard", () => {
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
     expect(mockUseNavigate).toHaveBeenCalledWith(
-      "/my-store/products/category/electronics"
+      "/products/category/electronics"
     );
   });
 
@@ -78,7 +74,7 @@ describe("CategoryCard", () => {
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
     expect(mockUseNavigate).toHaveBeenCalledWith(
-      "/my-store/products/category/jewellery"
+      "/products/category/jewellery"
     );
   });
 });

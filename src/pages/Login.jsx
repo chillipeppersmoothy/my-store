@@ -28,9 +28,7 @@ const Login = () => {
         return;
       }
       dispatch(authenticate(authenticated));
-      location.state?.path
-        ? navigate(location.state.path)
-        : navigate("/my-store/");
+      location.state?.path ? navigate(location.state.path) : navigate("/");
 
       setLoading(false);
       return authenticated;
@@ -40,42 +38,45 @@ const Login = () => {
   };
 
   return (
-    <form className="login-form">
-      <span className="error-span">{errorMsg}</span>
-      <label htmlFor="email" className="login-label">
-        Email
-      </label>
-      <input
-        type="text"
-        name="email"
-        className="login-inp"
-        value={email}
-        placeholder="Email"
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <label htmlFor="password" className="login-label">
-        Password
-      </label>
-      <input
-        type="password"
-        name="password"
-        className="login-inp"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <button
-        type="submit"
-        onClick={handleLogin}
-        disabled={loading ? true : false}
-      >
-        {!loading ? "Submit" : "Loading..."}
-      </button>
-    </form>
+    <div>
+      <form className="login-form">
+        <span className="error-span">{errorMsg}</span>
+        <label htmlFor="email" className="login-label">
+          Email
+        </label>
+        <input
+          type="text"
+          name="email"
+          className="login-inp"
+          value={email}
+          placeholder="Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <label htmlFor="password" className="login-label">
+          Password
+        </label>
+        <input
+          type="password"
+          name="password"
+          className="login-inp"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <button
+          type="submit"
+          onClick={handleLogin}
+          disabled={loading ? true : false}
+        >
+          {!loading ? "Submit" : "Loading..."}
+        </button>
+      </form>
+      <p>email: john@gmail.com & password: m38rmF$</p>
+    </div>
   );
 };
 export default Login;

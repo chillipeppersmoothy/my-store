@@ -95,8 +95,8 @@ describe("Checkout", () => {
     render(<Checkout />);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/login", {
-      state: { path: "/my-store/checkout" },
+    expect(mockUseNavigate).toHaveBeenCalledWith("/login", {
+      state: { path: "/checkout" },
     });
   });
 });

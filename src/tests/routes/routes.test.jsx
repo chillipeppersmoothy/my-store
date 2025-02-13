@@ -7,12 +7,12 @@ import { route } from "../../routes/routes";
 import store from "./../../store/store";
 
 describe("App Routes", () => {
-  it("renders Home component for /my-store/", () => {
+  it("renders Home component for /", () => {
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={["/my-store/"]}>
+        <MemoryRouter initialEntries={["/"]}>
           <Routes>
-            <Route path="/my-store/" element={<App />}>
+            <Route path="/" element={<App />}>
               {route[0].children.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}
@@ -28,12 +28,12 @@ describe("App Routes", () => {
     expect(screen.getByAltText("human-image")).toBeInTheDocument();
   });
 
-  it("renders Products component for /my-store/products", () => {
+  it("renders Products component for /products", () => {
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={["/my-store/products"]}>
+        <MemoryRouter initialEntries={["/products"]}>
           <Routes>
-            <Route path="/my-store/" element={<App />}>
+            <Route path="/" element={<App />}>
               {route[0].children.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}
@@ -50,12 +50,12 @@ describe("App Routes", () => {
     expect(screen.getByText("Jewellery")).toBeInTheDocument();
   });
 
-  it("renders Cart component for /my-store/cart", () => {
+  it("renders Cart component for /cart", () => {
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={["/my-store/cart"]}>
+        <MemoryRouter initialEntries={["/cart"]}>
           <Routes>
-            <Route path="/my-store/" element={<App />}>
+            <Route path="/" element={<App />}>
               {route[0].children.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
               ))}

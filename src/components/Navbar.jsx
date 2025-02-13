@@ -11,20 +11,20 @@ const Navbar = () => {
   const location = useLocation();
 
   const handleNavigationScroll = () => {
-    navigate("/my-store/", { state: { scrollToCategory: true } });
+    navigate("/", { state: { scrollToCategory: true } });
   };
   const state = useSelector((state) => state);
 
   return (
     <nav>
       <div className="nav-cont-1">
-        <Link to="/my-store/">
+        <Link to="/">
           <h2 className="nav-h2">
             My-<span style={{ fontWeight: "400" }}>store</span>
           </h2>
         </Link>
         <ul className="nav-ul">
-          <Link to="/my-store/products" style={{ color: "black" }}>
+          <Link to="/products" style={{ color: "black" }}>
             Products
           </Link>
           <span
@@ -34,12 +34,12 @@ const Navbar = () => {
           >
             Shop
           </span>
-          <Link to="/my-store/about" style={{ color: "black" }}>
+          <Link to="/about" style={{ color: "black" }}>
             About
           </Link>
         </ul>
       </div>
-      {location.pathname === "/my-store/products" ? (
+      {location.pathname === "/products" ? (
         <div className="search_bar">
           <span className="material-symbols-outlined search_icon">
             <AiOutlineSearch
@@ -65,7 +65,7 @@ const Navbar = () => {
           <button
             className="login-nav"
             onClick={() =>
-              navigate("/my-store/login", {
+              navigate("/login", {
                 state: { path: location.pathname },
               })
             }
@@ -74,7 +74,7 @@ const Navbar = () => {
           </button>
         )}
 
-        <Link to="/my-store/cart" className="cart-icon-cont">
+        <Link to="/cart" className="cart-icon-cont">
           <span className="nav-cart-count">{state.cart.numberOfItems}</span>
           <HiShoppingCart
             size={25}

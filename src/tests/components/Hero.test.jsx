@@ -24,14 +24,14 @@ describe("Hero", () => {
     expect(screen.getByAltText("human-image")).toBeInTheDocument();
   });
 
-  it("should navigate to /my-store/ on button click", () => {
+  it("should navigate to / on button click", () => {
     render(<Hero />);
 
     const button = screen.getByText("SHOP NOW");
     button.click();
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/", {
+    expect(mockUseNavigate).toHaveBeenCalledWith("/", {
       state: { scrollToCategory: true },
     });
   });

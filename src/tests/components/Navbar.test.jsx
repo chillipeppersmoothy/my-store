@@ -70,18 +70,18 @@ describe("Navbar", () => {
     fireEvent.click(button);
 
     expect(navigateMock).toHaveBeenCalledTimes(1);
-    expect(navigateMock).toHaveBeenCalledWith("/my-store/", {
+    expect(navigateMock).toHaveBeenCalledWith("/", {
       state: { scrollToCategory: true },
     });
   });
 
-  it("should navigate to /my-store/login on click of login button", () => {
+  it("should navigate to /login on click of login button", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
     });
 
-    useLocation.mockReturnValue({ pathname: "/my-store/" });
+    useLocation.mockReturnValue({ pathname: "/" });
 
     render(
       <MemoryRouter>
@@ -93,8 +93,8 @@ describe("Navbar", () => {
     fireEvent.click(button);
 
     expect(navigateMock).toBeCalledTimes(1);
-    expect(navigateMock).toHaveBeenCalledWith("/my-store/login", {
-      state: { path: "/my-store/" },
+    expect(navigateMock).toHaveBeenCalledWith("/login", {
+      state: { path: "/" },
     });
   });
 
@@ -113,7 +113,7 @@ describe("Navbar", () => {
     expect(screen.queryByText("Login")).not.toBeInTheDocument();
   });
 
-  it("should navigate to /my-store/ on click of my-store link", () => {
+  it("should navigate to / on click of my-store link", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
@@ -131,17 +131,17 @@ describe("Navbar", () => {
 
     waitFor(() => {
       expect(navigateMock).toBeCalledTimes(1);
-      expect(navigateMock).toHaveBeenCalledWith("/my-store/");
+      expect(navigateMock).toHaveBeenCalledWith("/");
     });
   });
 
-  it("should navigate to /my-store/products on click of products link", () => {
+  it("should navigate to /products on click of products link", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
     });
 
-    useLocation.mockReturnValue({ pathname: "/my-store/products" });
+    useLocation.mockReturnValue({ pathname: "/products" });
 
     render(
       <MemoryRouter>
@@ -155,7 +155,7 @@ describe("Navbar", () => {
 
     waitFor(() => {
       expect(navigateMock).toBeCalledTimes(1);
-      expect(navigateMock).toHaveBeenCalledWith("/my-store/products");
+      expect(navigateMock).toHaveBeenCalledWith("/products");
     });
 
     const inputBox = screen.getByPlaceholderText(
@@ -168,7 +168,7 @@ describe("Navbar", () => {
     expect(mockUseDispatch).toHaveBeenCalledWith(filterData("search"));
   });
 
-  it("should navigate to /my-store/about on click of about link", () => {
+  it("should navigate to /about on click of about link", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
@@ -186,11 +186,11 @@ describe("Navbar", () => {
 
     waitFor(() => {
       expect(navigateMock).toBeCalledTimes(1);
-      expect(navigateMock).toHaveBeenCalledWith("/my-store/about");
+      expect(navigateMock).toHaveBeenCalledWith("/about");
     });
   });
 
-  it("should navigate to /my-store/cart on click of cart link", () => {
+  it("should navigate to /cart on click of cart link", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
@@ -208,7 +208,7 @@ describe("Navbar", () => {
 
     waitFor(() => {
       expect(navigateMock).toBeCalledTimes(1);
-      expect(navigateMock).toHaveBeenCalledWith("/my-store/cart");
+      expect(navigateMock).toHaveBeenCalledWith("/cart");
     });
   });
 });

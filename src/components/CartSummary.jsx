@@ -51,7 +51,7 @@ const CartSummary = () => {
       </div>
       <button
         className="cart-summary-button"
-        onClick={() => navigate("/my-store/checkout")}
+        onClick={() => navigate("/checkout")}
       >
         <div className="css-xjhrni">PLACE ORDER</div>
       </button>

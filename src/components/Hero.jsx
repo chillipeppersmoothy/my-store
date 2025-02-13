@@ -11,9 +11,7 @@ const Hero = () => {
           <h2 className="hero-text-h2">NEW SEASON</h2>
           <button
             className="hero-btn"
-            onClick={() =>
-              navigate("/my-store/", { state: { scrollToCategory: true } })
-            }
+            onClick={() => navigate("/", { state: { scrollToCategory: true } })}
           >
             SHOP NOW
           </button>

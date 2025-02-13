@@ -45,8 +45,8 @@ describe("Login", () => {
     expect(screen.getByRole("button", { name: "Submit" })).toBeInTheDocument();
   });
 
-  it("should authenticate successfully and navigate to /my-store/cart when clicked on login button from cart page", () => {
-    const mockUseLocation = { state: { path: "/my-store/cart" } };
+  it("should authenticate successfully and navigate to /cart when clicked on login button from cart page", () => {
+    const mockUseLocation = { state: { path: "/cart" } };
 
     const mockUser = { email: "test@example.com", password: "test123" };
     authenticateUser.mockReturnValue([mockUser]);
@@ -66,11 +66,11 @@ describe("Login", () => {
       expect(mockUseDispatch).toHaveBeenCalledTimes(1);
       expect(mockUseDispatch).toHaveBeenCalledWith(authenticate(mockUser));
       expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-      expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/cart");
+      expect(mockUseNavigate).toHaveBeenCalledWith("/cart");
     });
   });
 
-  it("should authenticate successfully and navigate to /my-store/ when clicked on login button from home page", () => {
+  it("should authenticate successfully and navigate to / when clicked on login button from home page", () => {
     const mockUser = { email: "test@example.com", password: "test123" };
     authenticateUser.mockReturnValue([mockUser]);
     useLocation.mockReturnValue({});
@@ -89,7 +89,7 @@ describe("Login", () => {
       expect(mockUseDispatch).toHaveBeenCalledTimes(1);
       expect(mockUseDispatch).toHaveBeenCalledWith(authenticate(mockUser));
       expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-      expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/");
+      expect(mockUseNavigate).toHaveBeenCalledWith("/");
     });
   });
 

@@ -13,7 +13,7 @@ const CategoryCard = ({ imgSrc, title }) => {
 
   const handleClick = () => {
     const categoryPath = categoryMap[title];
-    navigate(`/my-store/products/category/${categoryPath}`);
+    navigate(`/products/category/${categoryPath}`);
   };
 
   return (

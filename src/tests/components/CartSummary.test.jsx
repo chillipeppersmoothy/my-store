@@ -65,6 +65,6 @@ describe("CartSummary", () => {
     fireEvent.click(button);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/checkout");
+    expect(mockUseNavigate).toHaveBeenCalledWith("/checkout");
   });
 });

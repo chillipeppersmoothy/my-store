@@ -144,12 +144,9 @@ describe("Products", () => {
     fireEvent.click(mens);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith(
-      "/my-store/products/category/mens",
-      {
-        replace: true,
-      }
-    );
+    expect(mockUseNavigate).toHaveBeenCalledWith("/products/category/mens", {
+      replace: true,
+    });
 
     mockUseSelector.mockReturnValue({
       products: {
@@ -217,7 +214,7 @@ describe("Products", () => {
     fireEvent.click(all);
 
     expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-    expect(mockUseNavigate).toHaveBeenCalledWith("/my-store/products/", {
+    expect(mockUseNavigate).toHaveBeenCalledWith("/products/", {
       replace: true,
     });
 
@@ -282,12 +279,9 @@ describe("Products", () => {
       expect(mockUseDispatch).toHaveBeenCalledWith(setProducts(products));
 
       expect(mockUseNavigate).toHaveBeenCalledTimes(1);
-      expect(mockUseNavigate).toHaveBeenCalledWith(
-        "/my-store/products/catgory/womens",
-        {
-          replace: true,
-        }
-      );
+      expect(mockUseNavigate).toHaveBeenCalledWith("/products/catgory/womens", {
+        replace: true,
+      });
     });
   });
 

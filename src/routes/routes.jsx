@@ -9,41 +9,41 @@ import About from "../pages/About";
 
 export const route = [
   {
-    path: "/my-store/",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "/my-store/",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/my-store/products",
+        path: "/products",
         element: <Products />,
       },
       {
-        path: "/my-store/products/category/:category?",
+        path: "/products/category/:category?",
         element: <Products />,
       },
       {
-        path: "/my-store/about",
+        path: "/about",
         element: <About />,
       },
       {
-        path: "/my-store/cart",
+        path: "/cart",
         element: <Cart />,
       },
       {
-        path: "/my-store/checkout",
+        path: "/checkout",
         element: <Checkout />,
       },
       {
-        path: "/my-store/login",
+        path: "/login",
         element: <Login />,
       },
     ],
   },
 ];
 
-const router = createBrowserRouter(route, { initialEntries: ["/my-store/"] });
+const router = createBrowserRouter(route, { initialEntries: ["/"] });
 
 export default router;

@@ -54,13 +54,13 @@ describe("App", () => {
     expect(screen.getByRole("link", { name: "2" })).toBeInTheDocument();
   });
 
-  it("should navigate to /my-store/login on click of login button", () => {
+  it("should navigate to /login on click of login button", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
     });
 
-    useLocation.mockReturnValue({ pathname: "/my-store/" });
+    useLocation.mockReturnValue({ pathname: "/" });
 
     render(
       <MemoryRouter>
@@ -72,8 +72,8 @@ describe("App", () => {
     fireEvent.click(button);
 
     expect(navigateMock).toBeCalledTimes(1);
-    expect(navigateMock).toHaveBeenCalledWith("/my-store/login", {
-      state: { path: "/my-store/" },
+    expect(navigateMock).toHaveBeenCalledWith("/login", {
+      state: { path: "/" },
     });
   });
 
@@ -93,18 +93,18 @@ describe("App", () => {
     fireEvent.click(button);
 
     expect(navigateMock).toHaveBeenCalledTimes(1);
-    expect(navigateMock).toHaveBeenCalledWith("/my-store/", {
+    expect(navigateMock).toHaveBeenCalledWith("/", {
       state: { scrollToCategory: true },
     });
   });
 
-  it("should navigate to /my-store/products on click of products link", () => {
+  it("should navigate to /products on click of products link", () => {
     useSelector.mockReturnValue({
       login: { isLoggedIn: false },
       cart: { numberOfItems: 2 },
     });
 
-    useLocation.mockReturnValue({ pathname: "/my-store/products" });
+    useLocation.mockReturnValue({ pathname: "/products" });
 
     render(
       <MemoryRouter>
@@ -118,7 +118,7 @@ describe("App", () => {
 
     waitFor(() => {
       expect(navigateMock).toBeCalledTimes(1);
-      expect(navigateMock).toHaveBeenCalledWith("/my-store/products");
+      expect(navigateMock).toHaveBeenCalledWith("/products");
     });
 
     const inputBox = screen.getByPlaceholderText(

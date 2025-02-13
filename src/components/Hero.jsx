@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="hero-cont">
       <div className="hero-text-cont">
         <div className="hero-text-wrapper">
-          <h3 className="hero-text-h3">Tee Collection 2024</h3>
+          <h3 className="hero-text-h3">Tee Collection 2025</h3>
           <h2 className="hero-text-h2">NEW SEASON</h2>
           <button
             className="hero-btn"

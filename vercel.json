@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/my-store/**",
+            "source": "/my-store/:path*",
             "destination": "/index.html"
         }
     ]
